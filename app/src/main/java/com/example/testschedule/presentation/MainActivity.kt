@@ -15,6 +15,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
+import androidx.glance.appwidget.updateAll
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
@@ -22,7 +23,11 @@ import com.example.testschedule.domain.model.schedule.ScheduleModel
 import com.example.testschedule.presentation.schedule_screen.view_schedule_screen.exams.ViewExamsScreen
 import com.example.testschedule.presentation.schedule_screen.view_schedule_screen.schedule.ViewScheduleScreen
 import com.example.testschedule.presentation.ui.theme.TestScheduleTheme
+import com.example.testschedule.widget.ScheduleWidget
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
@@ -39,7 +44,13 @@ class MainActivity : ComponentActivity() {
                 }
             }
         }
+    }
 
+    override fun onPause() {
+        super.onPause()
+        CoroutineScope(Dispatchers.IO).launch {
+            ScheduleWidget().updateAll(applicationContext)
+        }
     }
 }
 

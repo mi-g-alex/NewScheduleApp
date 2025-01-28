@@ -236,7 +236,7 @@
     <string name="schedule_select_subgroup">Подгруппа по умолчанию</string>
     <string name="schedule_select_subgroup_title">Выберите вашу подгруппу</string>
     <string name="schedule_subgroup_text">Подгр\. %d</string>
-    <string name="schedule_week">Неделя %d</string>
+    <string name="schedule_week">%d нед.</string>
     <string name="account_settings_phone">Номер телефона</string>
     <string name="account_settings_phone_desc">Чтобы изменить номер телефона, посетите Ваш деканат</string>
     <string name="account_settings_phone_info">Текущий: %s</string>
@@ -331,4 +331,8 @@
     <string name="account_settings_advanced_clear_cache">Очистить кэш картинок</string>
     <string name="account_settings_advanced_clear_cache_desc">Нажмите, чтобы очистить кэш картинок</string>
     <string name="account_settings_info_links_open_desc">Открыть ссылку %s: %s</string>
+    <string name="widget_today">Сегодня</string>
+    <string name="widget_tomorrow">Завтра</string>
+    <string name="widget_error">Нет сохраненных данных.\nОткройте приложение и загрузите расписание.</string>
+    <string name="widget_updated_at">Виджет обновлен %s</string>
 </resources>

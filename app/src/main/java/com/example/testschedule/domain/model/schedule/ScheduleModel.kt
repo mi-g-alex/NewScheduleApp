@@ -57,7 +57,10 @@ data class ScheduleModel(
         val degreeAbbrev: String?, // кратко? к.т.н.
         val rank: String?, // доцент и т.п.h
         val urlId: String, // s-nesterenkov
-    )
+    ) {
+        fun getFio(): String =
+            "$lastName ${firstName[0]}." + if (middleName?.isNotBlank() == true) " ${middleName[0]}." else ""
+    }
 
     /**
      * ### ListOfGroupsModel - информация о группе в расписании
@@ -132,6 +135,7 @@ data class ScheduleModel(
             )
         }
     }
+
 }
 
 /**

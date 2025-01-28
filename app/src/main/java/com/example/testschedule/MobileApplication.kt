@@ -11,6 +11,7 @@ import dagger.hilt.android.HiltAndroidApp
 
 @HiltAndroidApp
 class MobileApplication : Application(), ImageLoaderFactory {
+
     override fun newImageLoader(): ImageLoader {
         return ImageLoader(this).newBuilder()
             .memoryCachePolicy(CachePolicy.ENABLED)

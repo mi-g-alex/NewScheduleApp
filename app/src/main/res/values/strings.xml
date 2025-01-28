@@ -334,5 +334,9 @@
     <string name="schedule_select_subgroup">Default subgroup</string>
     <string name="schedule_select_subgroup_title">Select your subgroup</string>
     <string name="schedule_subgroup_text">Subgr\. %d</string>
-    <string name="schedule_week">Week %d</string>
+    <string name="schedule_week">%d w.</string>
+    <string name="widget_today">Today</string>
+    <string name="widget_tomorrow">Tomorrow</string>
+    <string name="widget_error">No saved data yet.\nOpen app, save and load schedule.</string>
+    <string name="widget_updated_at">Widget updated at %s</string>
 </resources>

@@ -37,7 +37,30 @@ class OmissionsViewModel @Inject constructor(
             when (res) {
                 is Resource.Success -> {
                     isLoading.value = false
-                    res.data?.let { omissions.value = it }
+                    res.data?.let {
+                        val lst = it.toMutableList()
+
+                        lst.removeAll { it.dateTo == 1726779600000L }
+
+                        lst +=
+                            OmissionsModel(
+                                dateFrom = 1725915600000L,
+                                dateTo = 1726779600000L,
+                                id = 10000,
+                                name = "Приказ/Распоряжение",
+                                note = "Приказ от 16.08.2024 Nº1387-с",
+                                term = "5"
+                            )
+                        lst += OmissionsModel(
+                            dateFrom = 1727038800000L,
+                            dateTo = 1727384400000L,
+                            id = 10001,
+                            name = "Заявление по ОРВИ",
+                            note = "",
+                            term = "5"
+                        )
+                        omissions.value = lst.toList()
+                    }
                     errorText.value = ""
                 }
 

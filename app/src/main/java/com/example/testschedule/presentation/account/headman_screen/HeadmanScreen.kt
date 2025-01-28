@@ -157,8 +157,8 @@ fun HeadmanScreen(
                             scope.launch {
                                 showSnack(
                                     snackTextSaveSuccess.format(
-                                        viewModel.lessonsList.first { it.id == id }.nameAbbrev,
-                                        viewModel.lessonsList.first { it.id == id }.lessonTypeAbbrev
+                                        viewModel.lessonsList.firstOrNull { it.id == id }?.nameAbbrev ?: "",
+                                        viewModel.lessonsList.firstOrNull { it.id == id }?.lessonTypeAbbrev ?: ""
                                     )
                                 )
                             }
@@ -167,8 +167,8 @@ fun HeadmanScreen(
                             scope.launch {
                                 showSnack(
                                     snackTextSaveError.format(
-                                        viewModel.lessonsList.first { it.id == id }.nameAbbrev,
-                                        viewModel.lessonsList.first { it.id == id }.lessonTypeAbbrev
+                                        viewModel.lessonsList.firstOrNull { it.id == id }?.nameAbbrev ?: "",
+                                        viewModel.lessonsList.firstOrNull { it.id == id }?.lessonTypeAbbrev ?: ""
                                     )
                                 )
                             }

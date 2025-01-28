@@ -55,6 +55,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.glance.appwidget.updateAll
 import androidx.hilt.navigation.compose.hiltViewModel
 import coil.compose.SubcomposeAsyncImage
 import com.example.testschedule.R
@@ -65,6 +66,9 @@ import com.example.testschedule.domain.model.schedule.ListOfGroupsModel
 import com.example.testschedule.presentation.schedule_screen.add_schedule_screen.spec_items.MoreDetailsAboutSchedule
 import com.example.testschedule.presentation.schedule_screen.add_schedule_screen.spec_items.OpenByDefaultScheduleDialog
 import com.example.testschedule.presentation.schedule_screen.add_schedule_screen.spec_items.SelectSubgroupDialog
+import com.example.testschedule.widget.ScheduleWidget
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 @Composable
@@ -318,6 +322,8 @@ fun SavedListView(
 ) {
     val sharedPref =
         LocalContext.current.getSharedPreferences(Constants.MY_PREF, Context.MODE_PRIVATE)
+
+    val cnt = LocalContext.current
     var openDialog by remember { mutableStateOf(false) }
     var openSubgroupSettingsDialog by remember { mutableStateOf(false) }
     saved.value?.let {

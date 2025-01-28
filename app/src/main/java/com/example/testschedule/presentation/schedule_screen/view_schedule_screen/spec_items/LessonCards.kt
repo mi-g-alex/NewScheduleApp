@@ -172,9 +172,8 @@ fun LessonCard(
                         if (isGroup) {
                             if (lesson.employees?.isNotEmpty() == true) {
                                 lesson.employees.sortedBy { it.lastName }.forEach {
-                                    fio += it.lastName + " " +
-                                            it.firstName[0] + "." +
-                                            (it.middleName?.let { " ${it[0]}." } ?: "") + ", "
+                                    it.getFio()
+                                    fio += it.getFio() + ", "
                                 }
                                 fio = fio.removeSuffix(", ")
                             }

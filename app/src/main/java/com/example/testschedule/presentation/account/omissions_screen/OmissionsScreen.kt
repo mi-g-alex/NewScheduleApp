@@ -35,7 +35,6 @@ import com.example.testschedule.presentation.account.additional_elements.ListDat
 import com.example.testschedule.presentation.account.additional_elements.SectionItem
 import com.example.testschedule.presentation.account.dormitory_screen.timeLongToString
 
-@OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun OmissionsScreen(
     onBackPressed: () -> Unit,

@@ -74,11 +74,11 @@ object AppModule {
     class MyPreference @Inject constructor(@ApplicationContext context: Context) {
         private val prefs = context.getSharedPreferences(Constants.MY_PREF, Context.MODE_PRIVATE)
 
-        /*
         fun getLastUpdateCurrentWeek(): Long = prefs.getLong(Constants.LAST_UPDATE_CURRENT_WEEK, 0)
 
+        fun getSelectedSubgroup(): Int = prefs.getInt(Constants.SELECTED_SUBGROUP, 0)
+
         fun getCurrentWeek(): Int = prefs.getInt(Constants.CURRENT_WEEK, 0)
-        */
 
         fun setCurrentWeek(date: Long, week: Int) {
             prefs.edit()
